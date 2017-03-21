@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SpeakersComponent } from './speakers/speakers.component';
 import { SpeakersListComponent } from './speakers/speakers-list/speakers-list.component';
 import { BioComponent } from './speakers/bio/bio.component';
+import { TopicComponent } from './speakers/topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BioComponent } from './speakers/bio/bio.component';
     HomeComponent,
     SpeakersComponent,
     SpeakersListComponent,
-    BioComponent
+    BioComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,

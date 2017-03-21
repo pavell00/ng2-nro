@@ -20,6 +20,6 @@ export class SpeakersListComponent implements OnInit {
   }
 
   showBio(id) {
-    this.router.navigate(['/speakers', {outlets: {'bio': [id]}}]);
+    this.router.navigate(['/speakers', {outlets: {'bio': [id], 'top': [id]}}]);
   }
 }

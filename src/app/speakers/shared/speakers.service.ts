@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Speaker } from './';
+import { Topic } from './';
 
 @Injectable()
 export class SpeakersService {
@@ -12,6 +13,17 @@ export class SpeakersService {
     {id: 6, name: 'Victor Savkin', src: 'victor.jpg', bio: 'Mr. Rogers of JavaScript. Victor makes Angular. He also toys with eclectic programming technologies and obsesses over fonts and keyboard layouts.'}
   ];
 
+  private topics: Topic[] = [
+    {spk_id: 1, title: 'win10', duration: 20},
+    {spk_id: 1, title: 'Angular JS', duration: 40},
+    {spk_id: 2, title: 'Angular 2', duration: 60},
+    {spk_id: 2, title: 'Node JS', duration: 30},
+    {spk_id: 3, title: 'Bootstrap 4', duration: 20},
+    {spk_id: 4, title: 'FlexBox', duration: 25},
+    {spk_id: 4, title: 'JavaScript 2016', duration: 50},
+    {spk_id: 5, title: 'WebPack', duration: 60}
+  ]
+
   constructor() { }
 
   getSpeakers() {
@@ -21,4 +33,8 @@ export class SpeakersService {
   getSpeakerByID(id) {
     return this.speakers.find(speaker => speaker.id === Number(id));
   }
+
+  getTopicBySpeakerID(id) {
+    return this.topics.filter(topic => topic.spk_id === Number(id));
+  }  
 }
