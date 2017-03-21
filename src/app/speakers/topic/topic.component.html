@@ -1,6 +1,7 @@
 <div *ngIf="!currentTopics">
-  <md-card-title>Total topics: {{topics.length}}</md-card-title>
-  <md-card-subtitle *ngFor="let topic of topics">
+  <md-card-title >Selected topic: {{selectedTopic?.title}}</md-card-title>
+  <md-card-subtitle *ngFor="let topic of topics" (click)="onSelect(topic)" 
+        [class.selected]="topic === selectedTopic">
       Topic: {{topic?.title}}, duration - {{topic?.duration}} min
   </md-card-subtitle>
 </div>

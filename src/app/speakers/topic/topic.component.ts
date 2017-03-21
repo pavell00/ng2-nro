@@ -9,6 +9,7 @@ import { SpeakersService, Topic} from '../shared';
 })
 export class TopicComponent implements OnInit {
   topics: Topic[];
+  selectedTopic: Topic;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +20,10 @@ export class TopicComponent implements OnInit {
       this.route.params.subscribe((params: {id: string}) => {
       this.topics = this.service.getTopicBySpeakerID(params.id);
     });
+  }
+
+  onSelect(t: Topic){
+    this.selectedTopic = t;
   }
 
 }
